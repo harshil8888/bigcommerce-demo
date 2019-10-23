@@ -1,0 +1,101 @@
+<!--
+<h2 class="page-heading">{{lang 'products.top' }}</h2>
+
+<ul class="productGrid productGrid--maxCol{{ columns }}" data-product-type="top_sellers"  {{#if settings.data_tag_enabled}} data-list-name="Most Popular Products" {{/if}}>
+{{#each products}}
+<li class="product">
+    {{>components/products/card settings=../settings theme_settings=../theme_settings customer=../customer event="list" position=(add @index 1)}}
+</li>
+{{/each}}
+</ul> -->
+
+<div class="all-products-section">
+			<div class="all-product-container">
+
+
+
+					<h3 class="txt-center"> {{lang 'products.top' }} </h3>
+
+
+
+				<div class="product-data all-product-slider">
+
+					{{#each products}}
+
+							<div class="product-items">
+								<div class="product-shop">
+									<div class="product-image">
+
+										<a href="{{ url }}">
+											{{> components/common/responsive-img
+			                    image=image
+			                }}
+										</a>
+
+									</div>
+
+
+
+										<a href="{{ url }}" class="shop-now">
+											<div class="button link-button">
+												Shop now
+											</div>
+										</a>
+                </div>
+
+
+
+
+									<div class="product-title txt-center">
+										<a href="{{ url }}">
+											{{ name }}
+										</a>
+									</div>
+
+
+
+							</div>
+
+						{{/each}}
+
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+		jQuery( document ).ready(function() {
+			// all product slider
+
+				jQuery( '.all-product-slider' ).slick({
+					infinite: true,
+					slidesToShow: 4,
+					slidesToScroll: 1,
+					arrows: true,
+					responsive: [
+						{
+							breakpoint: 1024,
+							settings: {
+								slidesToShow: 2,
+								slidesToScroll: 1,
+								infinite: true
+							}
+						},
+						{
+							breakpoint: 768,
+							settings: {
+								slidesToShow: 2,
+								slidesToScroll: 1
+							}
+						},
+						{
+							breakpoint: 480,
+							settings: {
+								slidesToShow: 1,
+								slidesToScroll: 1
+							}
+						}
+					]
+				});
+
+		});
+
+			</script>

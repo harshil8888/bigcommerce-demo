@@ -1,0 +1,1 @@
+{"components/carousel-content":"<h1>{{{heading}}}</h1>\n<p>{{{text}}}</p>\n{{#if button_text}}\n  <span class=\"button button--primary button--large\">{{button_text}}</span>\n{{/if}}\n"}

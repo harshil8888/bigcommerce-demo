@@ -1,0 +1,62 @@
+<!-- {{#if banners.top}}
+<div class="banners" data-banner-location="top">
+    {{#each (limit banners.top_metadata 1)}}
+    <div class="banner" data-event-type="promotion" data-entity-id="{{this.id}}" data-name="{{this.banner-name}}" data-position="{{this.location}}" data-banner-id="{{this.banner-name}}">
+        <div data-event-type="promotion-click">
+            {{{this.content}}}
+        </div>
+    </div>
+    {{/each}}
+</div>
+{{/if}} -->
+<header class="header-content flex flex-justiy-between flex-align-center" role="banner">
+    <a href="#" class="mobileMenu-toggle" data-mobile-menu-toggle="menu">
+        <span class="mobileMenu-toggleIcon">Toggle menu</span>
+    </a>
+    <div class="header-left flex flex-justify-between flen-align-center">
+      <div class="logo-content">
+        <a href="{{urls.home}}" class="logo">
+
+            {{#if settings.store_logo.image}}
+
+              <img src="{{getImage settings.store_logo.image 'logo_size'}}" alt="{{settings.store_logo.title}}" title="{{settings.store_logo.title}}">
+
+            {{else}}
+
+              <span class="header-logo-text">{{settings.store_logo.title}}</span>
+
+            {{/if}}
+
+        </a>
+      </div>
+    </div>
+    <!-- {{> components/common/navigation}} -->
+    {{> components/common/navigation-menu}}
+    <div class="header-right flex flex-align-center">
+
+      {{#if customer}}
+
+          <a class="login-link" href="{{urls.account.index}}">{{lang 'common.account'}}</a>
+
+      {{else}}
+
+        <a class="login-link"href="{{urls.auth.login}}">{{lang 'common.login'}}</a>
+
+      {{/if}}
+      <div class="mini-cart flex flex-align-center">
+        <a
+            class="navUser-action "
+            data-cart-preview
+            data-dropdown="cart-preview-dropdown"
+            data-options="align:right"
+            href="{{urls.cart}}">
+            <i class="fa fa-shopping-bag"></i>
+
+            <!-- <span class="navUser-item-cartLabel">{{lang 'common.cart'}}</span> <span class="countPill cart-quantity"></span>-->
+        </a>
+        <div class="dropdown-menu" id="cart-preview-dropdown" data-dropdown-content aria-hidden="true"></div>
+      </div>
+    </div>
+
+</header>
+{{{region name="header_bottom"}}}

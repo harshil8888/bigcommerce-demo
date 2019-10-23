@@ -1,0 +1,19 @@
+<div class="social-subscribe-section">
+		<div class="social-subscribe-container flex flex-justify-between flex-items-start flex-content-start">
+			<div class="instagram-section">
+				<h3> {{lang 'insta.title'}} </h3>
+				<p> {{lang 'insta.label'}} </p>
+				<a href="{{lang 'insta.url'}}"> {{lang 'insta.urllabel'}} </a>
+			</div>
+			<div class="newsletter-section">
+				{{> components/common/subscription-form}}
+			</div>
+		</div>
+	</div>
+
+<!--<article class="footer-info-col" data-section-type="newsletterSubscription">
+  {{#if settings.show_newsletter_box}}
+    {{> components/common/subscription-form}}
+  {{/if}}
+  {{> components/common/payment-icons}}
+</article> -->
